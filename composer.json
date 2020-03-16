@@ -1,15 +1,15 @@
 {
-    "name": "bitcoin-php/bitcoin-ecdsa",
+    "name": "cpuchain-php/cpuchain-ecdsa",
     "type": "library",
-    "description": "PHP library allowing to generate BTC addresses from private keys",
-    "keywords": ["ECDSA","Bitcoin"],
-    "homepage": "https://github.com/BitcoinPHP/BitcoinECDSA.php",
+    "description": "PHP library allowing to generate CPU addresses from private keys",
+    "keywords": ["ECDSA","CPUchain"],
+    "homepage": "https://github.com/CPUchainPHP/CPUchainECDSA.php",
     "license": "unlicense",
     "authors": [
         {
-            "name": "BitcoinPHP",
-            "email": "panda@panda.cat",
-            "homepage": "http://github.com/BitcoinPHP",
+            "name": "CPUchainPHP",
+            "email": "info@ethercore.org",
+            "homepage": "http://github.com/cpuchain",
             "role": "Developer"
         }
     ],
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-0": {
-            "BitcoinPHP\\BitcoinECDSA": "src"
+            "CPUchainPHP\\CPUchainECDSA": "src"
         }
     },
     "require-dev": {

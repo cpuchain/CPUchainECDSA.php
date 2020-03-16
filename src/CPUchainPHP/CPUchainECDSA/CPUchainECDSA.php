@@ -5,13 +5,13 @@
  * @author Jan Moritz Lindemann
  */
 
-namespace BitcoinPHP\BitcoinECDSA;
+namespace CPUchainPHP\CPUchainECDSA;
 
 if (!extension_loaded('gmp')) {
     throw new \Exception('GMP extension seems not to be installed');
 }
 
-class BitcoinECDSA
+class CPUchainECDSA
 {
 
     public $k;
@@ -34,7 +34,7 @@ class BitcoinECDSA
                     'y' => gmp_init('32670510020758816978083085130507043184471273380659243275938904335757337482424')
                    ];
 
-        $this->networkPrefix = '00';
+        $this->networkPrefix = '1C';
     }
 
     /***

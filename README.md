@@ -1,13 +1,7 @@
-[![Build](https://travis-ci.org/BitcoinPHP/BitcoinECDSA.php.svg?branch=master)](https://travis-ci.org/BitcoinPHP/BitcoinECDSA.php) &nbsp;
-[![Quality Score](https://scrutinizer-ci.com/g/BitcoinPHP/BitcoinECDSA.php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/BitcoinPHP/BitcoinECDSA.php/?branch=master) &nbsp;
-[![Latest Stable Version](https://poser.pugx.org/bitcoin-php/bitcoin-ecdsa/v/stable.svg)](https://packagist.org/packages/bitcoin-php/bitcoin-ecdsa) &nbsp;
-[![Downloads](http://img.shields.io/packagist/dt/bitcoin-php/bitcoin-ecdsa.svg?style=flat)](https://packagist.org/packages/bitcoin-php/bitcoin-ecdsa)
-
-
-WARNING
-===============
-
-This piece of software is provided without warranty of any kind, use it at your own risk.
+[![Build](https://travis-ci.org/CPUchainPHP/CPUchainECDSA.php.svg?branch=master)](https://travis-ci.org/CPUchainPHP/CPUchainECDSA.php) &nbsp;
+[![Quality Score](https://scrutinizer-ci.com/g/CPUchainPHP/CPUchainECDSA.php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/CPUchainPHP/CPUchainECDSA.php/?branch=master) &nbsp;
+[![Latest Stable Version](https://poser.pugx.org/cpuchain-php/cpuchain-ecdsa/v/stable.svg)](https://packagist.org/packages/cpuchain-php/cpuchain-ecdsa) &nbsp;
+[![Downloads](http://img.shields.io/packagist/dt/cpuchain-php/cpuchain-ecdsa.svg?style=flat)](https://packagist.org/packages/cpuchain-php/cpuchain-ecdsa)
 
 REQUIREMENTS
 ===============
@@ -25,25 +19,25 @@ USAGE
 
 Best way is to use composer
 ```
-composer require bitcoin-php/bitcoin-ecdsa
+composer require cpuchain-php/cpuchain-ecdsa
 ```
 Alternatively add following snippet in you composer.json
 ```
-"bitcoin-php/bitcoin-ecdsa" : ">=1.3"
+"cpuchain-php/cpuchain-ecdsa" : ">=1.3"
 ```
 
 **Instanciation**
 
 ```php
-use BitcoinPHP\BitcoinECDSA\BitcoinECDSA;
-require_once("src/BitcoinPHP/BitcoinECDSA/BitcoinECDSA.php");
-$bitcoinECDSA = new BitcoinECDSA();
+use CPUchainPHP\CPUchainECDSA\CPUchainECDSA;
+require_once("src/CPUchainPHP/CPUchainECDSA/CPUchainECDSA.php");
+$cpuchainECDSA = new CPUchainECDSA();
 ```
 
 **Set a private key**
 
 ```php
-$bitcoinECDSA->setPrivateKey($k);
+$cpuchainECDSA->setPrivateKey($k);
 ```
 examples of private keys :
 
@@ -53,7 +47,7 @@ examples of private keys :
 **Generate a random private key**
 
 ```php
-$bitcoinECDSA->generateRandomPrivateKey($nonce);
+$cpuchainECDSA->generateRandomPrivateKey($nonce);
 ```
 
 The nonce is optional, typically the nonce is a chunck of random data you get from the user. This can be mouse coordinates.
@@ -62,7 +56,7 @@ Using a nonce adds randomness, which means the generated private key is stronger
 **Get the private key**
 
 ```php
-$bitcoinECDSA->getPrivateKey();
+$cpuchainECDSA->getPrivateKey();
 ```
 
 Returns the private key.
@@ -70,7 +64,7 @@ Returns the private key.
 **Get the Wif**
 
 ```php
-$bitcoinECDSA->getWif();
+$cpuchainECDSA->getWif();
 ```
 
 returns the private key under the Wallet Import Format
@@ -79,7 +73,7 @@ returns the private key under the Wallet Import Format
 **Get the Public Key**
 
 ```php
-$bitcoinECDSA->getPubKey();
+$cpuchainECDSA->getPubKey();
 ```
 Returns the compressed public key.
 The compressed PubKey starts with 0x02 if it's y coordinate is even and 0x03 if it's odd, the next 32 bytes corresponds to the x coordinates.
@@ -89,7 +83,7 @@ Example : 0226c50013603b085fbc26411d5d7e564b252d88964eedc4e01251d2d495e92c29
 **Get the Uncompressed Public Key**
 
 ```php
-$bitcoinECDSA->getUncompressedPubKey();
+$cpuchainECDSA->getUncompressedPubKey();
 ```
 
 Returns the uncompressed PubKey.
@@ -100,7 +94,7 @@ Example : 04c80e8af3f1b7816a18aa24f242fc0740e9c4027d67c76dacf4ce32d2e5aace241c42
 **Get the coordinates of the Public Key**
 
 ```php
-$bitcoinECDSA->getPubKeyPoints();
+$cpuchainECDSA->getPubKeyPoints();
 ```
 
 Returns an array containing the x and y coordinates of the public key
@@ -111,24 +105,24 @@ Array ( [x] => a69243f3c4c047aba38d7ac3660317629c957ab1f89ea42343aee186538a34f8 
 **Get the Address**
 
 ```php
-$bitcoinECDSA->getAddress();
+$cpuchainECDSA->getAddress();
 ```
 
-Returns the compressed Bitcoin Address.
+Returns the compressed CPUchain Address.
 
 **Get the uncompressed Address**
 
 ```php
-$bitcoinECDSA->getUncompressedAddress();
+$cpuchainECDSA->getUncompressedAddress();
 ```
 
-Returns the uncompressed Bitcoin Address.
+Returns the uncompressed CPUchain Address.
 
 
 **Validate an address**
 
 ```php
-$bitcoinECDSA->validateAddress($address);
+$cpuchainECDSA->validateAddress($address);
 ```
 Returns true if the address is valid and false if it isn't
 
@@ -136,7 +130,7 @@ Returns true if the address is valid and false if it isn't
 **Validate a Wif key**
 
 ```php
-$bitcoinECDSA->validateWifKey($wif);
+$cpuchainECDSA->validateWifKey($wif);
 ```
 Returns true if the WIF key is valid and false if it isn't
 
@@ -147,7 +141,7 @@ Signatures
 **Sign a message**
 
 ```php
-$bitcoinECDSA->signMessage('message');
+$cpuchainECDSA->signMessage('message');
 ```
 
 Returns a satoshi client standard signed message.
@@ -156,7 +150,7 @@ Returns a satoshi client standard signed message.
 **verify a message**
 
 ```php
-$bitcoinECDSA->checkSignatureForRawMessage($signedMessage);
+$cpuchainECDSA->checkSignatureForRawMessage($signedMessage);
 ```
 
 Returns true if the signature is matching the address and false if it isn't.
@@ -165,7 +159,7 @@ Returns true if the signature is matching the address and false if it isn't.
 **sign a sha256 hash**
 
 ```php
-$bitcoinECDSA->signHash($hash);
+$cpuchainECDSA->signHash($hash);
 ```
 
 Returns a DER encoded hexadecimal signature.
@@ -174,17 +168,17 @@ Returns a DER encoded hexadecimal signature.
 **verify a signature**
 
 ```php
-$bitcoinECDSA->checkDerSignature($pubKey, $signature, $hash)
+$cpuchainECDSA->checkDerSignature($pubKey, $signature, $hash)
 ```
 
 Returns true if the signature is matching the public key and false if it isn't.
 
 Examples
 ===============
- - [Generate an address](https://github.com/BitcoinPHP/BitcoinECDSA.php/blob/master/Examples/generateAddress.php)
- - [Sign a message](https://github.com/BitcoinPHP/BitcoinECDSA.php/blob/master/Examples/signMessage.php)
- - [Verify a message](https://github.com/BitcoinPHP/BitcoinECDSA.php/blob/master/Examples/verifyMessage.php)
- - [Import or export a private key using WIF](https://github.com/BitcoinPHP/BitcoinECDSA.php/blob/master/Examples/wif.php)
+ - [Generate an address](https://github.com/CPUchainPHP/CPUchainECDSA.php/blob/master/Examples/generateAddress.php)
+ - [Sign a message](https://github.com/CPUchainPHP/CPUchainECDSA.php/blob/master/Examples/signMessage.php)
+ - [Verify a message](https://github.com/CPUchainPHP/CPUchainECDSA.php/blob/master/Examples/verifyMessage.php)
+ - [Import or export a private key using WIF](https://github.com/CPUchainPHP/CPUchainECDSA.php/blob/master/Examples/wif.php)
 
 License
 ===============
@@ -212,3 +206,7 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org/>
+
+Credits
+============
+This library is a fork of [BitcoinECDSA](https://github.com/BitcoinPHP/BitcoinECDSA.php) by [BitcoinPHP](https://github.com/BitcoinPHP), adapted to work with [CPUchain](https://cpuchain.org).

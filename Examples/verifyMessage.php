@@ -1,20 +1,20 @@
 <?php
 
-require_once '../src/BitcoinPHP/BitcoinECDSA/BitcoinECDSA.php';
+require_once '../src/CPUchainPHP/CPUchainECDSA/CPUchainECDSA.php';
 
-use BitcoinPHP\BitcoinECDSA\BitcoinECDSA;
+use CPUchainPHP\CPUchainECDSA\CPUchainECDSA;
 
-$bitcoinECDSA = new BitcoinECDSA();
+$cpuchainECDSA = new CPUchainECDSA();
 
 //To verify a message like this one
-$rawMessage = "-----BEGIN BITCOIN SIGNED MESSAGE-----
+$rawMessage = "-----BEGIN CPUCHAIN SIGNED MESSAGE-----
 Test message
 -----BEGIN SIGNATURE-----
 1L56ndSQ1LfrAB2xyo3ZN7egiW4nSs8KWS
 HxTqM+b3xj2Qkjhhl+EoUpYsDUz+uTdz6RCY7Z4mV62yOXJ3XCAfkiHV+HGzox7Ba/OC6bC0y6zBX0GhB7UdEM0=
------END BITCOIN SIGNED MESSAGE-----";
+-----END CPUCHAIN SIGNED MESSAGE-----";
 
-if($bitcoinECDSA->checkSignatureForRawMessage($rawMessage)) {
+if($cpuchainECDSA->checkSignatureForRawMessage($rawMessage)) {
     echo "Message verified" . PHP_EOL;
 } else {
     echo "Couldn't verify message" . PHP_EOL;
@@ -25,7 +25,7 @@ $signature = "HxTqM+b3xj2Qkjhhl+EoUpYsDUz+uTdz6RCY7Z4mV62yOXJ3XCAfkiHV+HGzox7Ba/
 $address = "1L56ndSQ1LfrAB2xyo3ZN7egiW4nSs8KWS";
 $message = "Test message";
 
-if($bitcoinECDSA->checkSignatureForMessage($address, $signature, $message)) {
+if($cpuchainECDSA->checkSignatureForMessage($address, $signature, $message)) {
     echo "Message verified" . PHP_EOL;
 } else {
     echo "Couldn't verify message" . PHP_EOL;
